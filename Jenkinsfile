@@ -8,18 +8,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build automation'
-                
-          
-               node{
-  if(isUnix()){
-  sh 'gradle build --info'
-
-  }
-  else{
-    bat 'gradle build --info'
-  }
-}
-
+                 sh 'gradle build --info'
                 //  sh './gradlew clean build --stacktrace'
                // sh './gradlew wrapper --gradle-version 5.0'
                // sh './gradlew build --no-daemon'
