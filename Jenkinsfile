@@ -8,11 +8,12 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build automation'
+               // sh 'cd /opt/gradle'
                 // sh './gradle build --info'
-                //  sh './gradlew clean build --stacktrace'
+                //  sh './opt/gradle/gradlew clean build --stacktrace'
                // sh './gradlew wrapper --gradle-version 5.0'
                 sh 'echo gradle -v'
-                sh './gradlew build --no-daemon'
+                sh './opt/gradle/gradlew build --no-daemon'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
         }
