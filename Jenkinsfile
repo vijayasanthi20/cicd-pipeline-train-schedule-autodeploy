@@ -12,8 +12,8 @@ pipeline {
                 // sh './gradle build --info'
                 //  sh './opt/gradle/gradlew clean build --stacktrace'
                // sh './gradlew wrapper --gradle-version 5.0'
-                sh 'echo gradle -v'
-                sh './opt/gradle/gradlew build --no-daemon'
+                sh 'gradle -v'
+                sh '/opt/gradle/gradlew build --no-daemon'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
         }
