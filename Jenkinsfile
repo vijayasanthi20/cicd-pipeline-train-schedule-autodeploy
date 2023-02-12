@@ -8,10 +8,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build automation'
-                 sh './gradle build --info'
+                // sh './gradle build --info'
                 //  sh './gradlew clean build --stacktrace'
                // sh './gradlew wrapper --gradle-version 5.0'
-               // sh './gradlew build --no-daemon'
+                sh './gradlew build --no-daemon'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
         }
