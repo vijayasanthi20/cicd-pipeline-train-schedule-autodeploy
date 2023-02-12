@@ -10,13 +10,15 @@ pipeline {
                 echo 'Running build automation'
                 
           
-             if(isUnix()){
-             sh 'gradle build --info'
+               node{
+  if(isUnix()){
+  sh 'gradle build --info'
 
-                 }
-            else{
-            bat 'gradle build --info'
-               }
+  }
+  else{
+    bat 'gradle build --info'
+  }
+}
 
                 //  sh './gradlew clean build --stacktrace'
                // sh './gradlew wrapper --gradle-version 5.0'
