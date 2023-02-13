@@ -39,7 +39,7 @@ pipeline {
                 }
             }
         }
-        stage('CanaryDeploy') {
+       /* stage('CanaryDeploy') {
             when {
                 branch 'master'
             }
@@ -51,7 +51,7 @@ pipeline {
                 kubectl apply -f 'train-schedule-kube-canary.yml'   
                  }
             }
-        }
+        }*/
       /*  stage('DeployToProduction') {
             when {
                 branch 'master'
