@@ -48,8 +48,8 @@ pipeline {
             }
             steps {
                 withKubeCredentials(kubectlCredentials: [[caCertificate: '', clusterName: 'kubernetes', contextName: '', credentialsId: 'KubeCred', namespace: 'kube-system', serverUrl: 'https://172.31.3.50:6443']]) {
-                kubectl apply -f train-schedule-kube-canary.yml   
-            }
+                kubectl apply -f 'train-schedule-kube-canary.yml'   
+                 }
             }
         }
       /*  stage('DeployToProduction') {
