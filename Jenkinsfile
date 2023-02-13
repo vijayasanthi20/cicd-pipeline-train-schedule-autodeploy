@@ -47,9 +47,8 @@ pipeline {
                 CANARY_REPLICAS = 1
             }
             steps {
-                stage('Apply Kubernetes files') {
-                 withKubeConfig([credentialsId: 'user1', serverUrl: 'https://api.k8s.my-company.com']) {
-                 sh 'kubectl apply -f my-kubernetes-directory'
+                withKubeCredentials(kubectlCredentials: [[caCertificate: '', clusterName: 'kubernetes', contextName: '', credentialsId: 'KubeCred', namespace: 'kube-system', serverUrl: 'https://172.31.3.50:6443']]) {
+                kubectl apply -f train-schedule-kube-canary.yml   
             }
             }
         }
